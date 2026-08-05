@@ -5,7 +5,7 @@ description: >-
   Talk to your Unitree humanoid on the timeline. Send natural-language
   commands ("wave hello", "shake hands", "sit down") and the agent translates
   them into safe, whitelisted actions on a real robot via your bridge.
-homepage: https://github.com/richard7463/unitree-g1-skill
+homepage: https://github.com/richard7463/unitree-skill
 license: MIT
 metadata:
   category: robotics
