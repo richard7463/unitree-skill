@@ -1,24 +1,24 @@
 <div align="center">
 
-# 🦾 Unitree G1 Skill
+# 🦾 Unitree Skill
 
 ### Talk to a humanoid robot on the timeline.
 
-**Post a sentence. A real Unitree G1 humanoid moves.**
+**Post a sentence. A real Unitree humanoid moves.**
 
 <br/>
 
 <a href="docs/media/bankr-g1-demo.mp4">
-  <img src="docs/media/bankr-g1-demo.gif" alt="Bankr driving a Unitree G1 humanoid from a natural-language command" width="720"/>
+  <img src="docs/media/bankr-g1-demo.gif" alt="Bankr driving a Unitree humanoid from a natural-language command" width="720"/>
 </a>
 
-<sub><b>Live:</b> Bankr takes a natural-language command from the timeline and a Unitree G1 humanoid executes it in real time. <a href="docs/media/bankr-g1-demo.mp4">▶ Watch the full clip</a></sub>
+<sub><b>Live:</b> Bankr takes a natural-language command from the timeline and a Unitree humanoid executes it in real time. <a href="docs/media/bankr-g1-demo.mp4">▶ Watch the full clip</a></sub>
 
 <br/>
 <br/>
 
 [![Skill](https://img.shields.io/badge/type-agent%20skill-6E56CF)](SKILL.md)
-[![Hardware](https://img.shields.io/badge/hardware-Unitree%20G1-00B8D9)](https://www.unitree.com/g1)
+[![Hardware](https://img.shields.io/badge/hardware-Unitree-00B8D9)](https://www.unitree.com)
 [![Runs on](https://img.shields.io/badge/harness-bankr%20%7C%20claude%20code%20%7C%20kiro-111)](#installing-the-skill-into-a-harness)
 [![Safety](https://img.shields.io/badge/safety-fail%20closed-E5484D)](#safety-model-why-the-bridge-not-the-agent-decides)
 [![License](https://img.shields.io/badge/license-MIT-2F855A)](SKILL.md)
@@ -29,16 +29,16 @@
 
 ## What this is
 
-An **agent skill** that lets an autonomous agent drive a **real Unitree G1
+An **agent skill** that lets an autonomous agent drive a **real Unitree
 humanoid** with plain language. Same playbook as the Teslr / Tesla skill —
 pointed at a robot instead of a car:
 
 ```
-real-world API (G1 SDK)  →  MCP/CLI wrapper (this bridge)  →  SKILL.md (agent instructions)  →  bankr / claude code / kiro
+real-world API (Unitree SDK)  →  MCP/CLI wrapper (this bridge)  →  SKILL.md (agent instructions)  →  bankr / claude code / kiro
 ```
 
 The one architectural twist vs Tesla: **Tesla has a cloud API, Unitree does
-not.** The G1 speaks DDS on your LAN, so we run a small **bridge** next to the
+not.** The robot speaks DDS on your LAN, so we run a small **bridge** next to the
 robot and expose it through a tunnel. The agent (in the cloud) calls the tunnel
 URL; **the bridge owns all safety.**
 
@@ -49,7 +49,7 @@ X timeline (bankr)  ──HTTPS + Bearer token──▶  tunnel (cloudflared/ngr
                                         bridge/server.py (FastAPI)
                                                    │  action whitelist + FSM gating
                                                    ▼
-                                    unitree_sdk2py LocoClient ──DDS/LAN──▶ G1
+                                    unitree_sdk2py LocoClient ──DDS/LAN──▶ Unitree
 ```
 
 ## Why it matters
@@ -89,7 +89,7 @@ are identical across all three — only the effect differs:
 |-----------|-------|--------------|---------|
 | `mock` (default) | nothing | returns text, advances a fake FSM | wiring the timeline→bridge path |
 | `sim` | MuJoCo | renders the gesture to an **mp4** you can post, or a **live window** | demo videos, no robot yet |
-| `real` | `unitree_sdk2py` + G1 on LAN | drives the physical robot | the live robot |
+| `real` | `unitree_sdk2py` + Unitree on LAN | drives the physical robot | the live robot |
 
 The legacy `G1_MOCK=1` still works and maps to `mock`.
 
@@ -122,7 +122,7 @@ robot.
 
 This is the one you screen-record (it's what the clip above shows). Start the
 bridge, open `/live`, and you get a split window: **left = a text box + gesture
-buttons, right = the G1 moving in real time.** Type "wave hello" (or
+buttons, right = the robot moving in real time.** Type "wave hello" (or
 "sit down" / "shake hands"), hit Send, and the robot on the right does it *now*. No file
 is produced — you just record the window.
 
@@ -143,11 +143,11 @@ robot in this same window moves. Left box = "you or bankr typing"; right pane =
 | Endpoint | What it does |
 |----------|--------------|
 | `GET /live` | the split window (no auth, just open it) |
-| `GET /live/stream` | MJPEG stream of the live G1 (the right pane) |
+| `GET /live/stream` | MJPEG stream of the live robot (the right pane) |
 | `POST /live/say {"text": "..."}` | NL → gesture, plays it immediately |
 | `GET /live/actions` | the gesture buttons |
 
-Under the hood `g1_live.py` keeps **one** MuJoCo G1 alive in a background thread
+Under the hood `g1_live.py` keeps **one** MuJoCo Unitree model alive in a background thread
 (single-threaded GL context), interpolates each queued gesture into frames using
 the exact same easing/gesture library as the mp4 backend, and hands the latest
 JPEG to the browser. Same "no physics, can't fall over, no-locomotion gestures
@@ -159,7 +159,7 @@ If you want a **file** rather than a live window, `sim` also renders each gestur
 with MuJoCo — a physics sandbox, **not** a Unity-style
 editor: you feed it joint targets and it renders the frames. We use pure
 kinematic playback (interpolate joint targets → `mj_forward` → offscreen render),
-so the G1 never needs a balance/walking policy and can't fall over. That means
+so the robot never needs a balance/walking policy and can't fall over. That means
 **only "no-locomotion" gestures render** (e.g. `wave`); actions that need a
 walking controller (`walk_forward`, `turn`) succeed the gate but report "no sim
 animation".
@@ -179,14 +179,14 @@ G1_MODE=sim uvicorn bridge.server:app --host 0.0.0.0 --port 8080
 ```
 
 Notes / gotchas:
-- The G1 MJCF model is reused from `unitree_lerobot` — no `mujoco_menagerie`
+- The Unitree MJCF model is reused from `unitree_lerobot` — no `mujoco_menagerie`
   download needed. Point `G1_SIM_MODEL` at a different XML to override.
 - We render **offscreen** (`mujoco.Renderer`) on purpose: the interactive viewer
   needs `mjpython` on macOS, offscreen doesn't, and it produces the mp4 directly.
 
-## Going live on the real G1
+## Going live on the real robot
 
-1. Run the bridge on a machine on the **same LAN / DDS domain** as the G1
+1. Run the bridge on a machine on the **same LAN / DDS domain** as the robot
    (Jetson, mini-PC, or a laptop plugged into the robot's network).
 2. Install the SDK there: `pip install unitree_sdk2py`
    (or from source: https://github.com/unitreerobotics/unitree_sdk2_python).
@@ -208,7 +208,7 @@ then paste two values when asked — exactly the Teslr "paste your key" flow:
 - `BRIDGE_URL`  = the tunnel URL
 - `BRIDGE_TOKEN` = the token you generated
 
-Now on the timeline: **"@yourbot wave hello on my G1"** → the robot waves.
+Now on the timeline: **"@yourbot wave hello on my Unitree"** → the robot waves.
 
 ---
 
@@ -227,7 +227,7 @@ Now on the timeline: **"@yourbot wave hello on my G1"** → the robot waves.
 - **x402 paid endpoint**: wrap `/command` so other agents pay USDC per action.
 - **On-chain triggers**: bridge subscribes to chain events (tip received / mint
   / gas threshold) and fires an action — the thing a pure MCP skill can't do.
-- More expressive actions (dances / gestures) as the G1 firmware exposes them.
+- More expressive actions (dances / gestures) as the Unitree firmware exposes them.
 
 ---
 
