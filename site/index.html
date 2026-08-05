@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unitree Skill — Software stops at the screen. Your robot won't.</title>
+<meta name="description" content="Type one sentence to Bankr; a real Unitree humanoid moves in the room. Every command passes a fail-closed safety bridge — nothing unsafe ever reaches the motors." />
+<link rel="canonical" href="https://unitreex.club/" />
+<link rel="icon" type="image/png" href="brand/avatar.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Unitree Skill" />
+<meta property="og:url" content="https://unitreex.club/" />
+<meta property="og:title" content="Software stops at the screen. Your robot won't." />
+<meta property="og:description" content="Type one sentence to Bankr; a real Unitree humanoid moves in the room. Fail-closed by design." />
+<meta property="og:image" content="https://unitreex.club/brand/banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Software stops at the screen. Your robot won't." />
+<meta name="twitter:description" content="Type one sentence to Bankr; a real Unitree humanoid moves in the room. Fail-closed by design." />
+<meta name="twitter:image" content="https://unitreex.club/brand/banner.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor" opacity=".45"/><rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor" opacity=".45"/><rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor"/></svg>
+    </span>
+    <span class="brand-name">Unitree</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#vision">Vision</a>
+    <a href="#products">Products</a>
+    <a href="#safety">Safety</a>
+  </nav>
+  <a class="btn btn-ghost nav-cta" href="https://github.com/richard7463/unitree-skill" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tagline-pill reveal"><span class="dot"></span> Live demo · Bankr → real humanoid</div>
+  <h1 class="hero-title reveal">
+    Software stops at the screen.<br /><span class="grad">Your robot won't.</span>
+  </h1>
+  <p class="hero-sub reveal">
+    Type one sentence to <strong>Bankr</strong>. A real Unitree humanoid moves in the room.
+    Nothing unsafe ever reaches the motors — every command passes a bridge that is
+    <strong>fail-closed by design.</strong>
+  </p>
+  <div class="hero-cta reveal">
+    <a class="btn btn-primary" href="#how">See how it works</a>
+    <a class="btn btn-ghost" href="bankr-skill/SKILL.md">Install the skill ↗</a>
+  </div>
+
+  <!-- HERO SHOWCASE VIDEO -->
+  <figure class="hero-stage reveal">
+    <div class="hero-stage-glow" aria-hidden="true"></div>
+    <div class="hero-stage-frame">
+      <div class="stage-bar">
+        <span class="stage-dot"></span><span class="stage-dot"></span><span class="stage-dot"></span>
+        <span class="stage-url">bankr → unitree bridge → g1 humanoid</span>
+        <span class="stage-live">● REC</span>
+      </div>
+      <video autoplay muted loop playsinline poster="media/bankr-g1-poster.jpg">
+        <source src="media/bankr-g1-demo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <figcaption>One sentence to your assistant → real-world motion, gated by a fail-closed bridge.</figcaption>
+  </figure>
+
+  <div class="hero-metrics reveal">
+    <div class="metric"><span class="metric-num">1</span><span class="metric-label">sentence → real-world motion</span></div>
+    <div class="metric"><span class="metric-num">∞</span><span class="metric-label">agents, one physical world</span></div>
+    <div class="metric"><span class="metric-num">0</span><span class="metric-label">unsafe actions, by design</span></div>
+  </div>
+</section>
+
+<!-- SAY-IT DEMO STRIP -->
+<section class="says">
+  <div class="says-head reveal">Say it, and it moves</div>
+  <div class="says-grid">
+    <div class="say reveal"><span class="say-you">“wave hello on my Unitree”</span><span class="say-do">arm waves</span></div>
+    <div class="say reveal"><span class="say-you">“take two steps forward”</span><span class="say-do">robot walks</span></div>
+    <div class="say reveal"><span class="say-you">“turn to face the camera”</span><span class="say-do">robot turns</span></div>
+    <div class="say reveal"><span class="say-you">“what's your battery?”</span><span class="say-do">reads state back</span></div>
+  </div>
+</section>
+
+<!-- CONTEXT STRIP -->
+<section class="strip reveal">
+  <span>Intent from</span>
+  <b>Bankr</b><i>·</i><b>the timeline</b><i>·</i><b>on-chain events</b><i>·</i><b>any AI harness</b>
+  <span>→ motion on</span>
+  <b>real humanoids</b>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="vision">
+  <div class="section-head reveal">
+    <span class="eyebrow">The thesis</span>
+    <h2>The next interface for agents isn't a screen. It's the world.</h2>
+  </div>
+  <div class="vision-grid">
+    <article class="vcard reveal">
+      <div class="vcard-idx">01</div>
+      <h3>Software agents hit a wall at the edge of the machine.</h3>
+      <p>They move money, mint, and post — but every action stops where the physical world begins. There is no <code>POST /wave</code> for reality.</p>
+    </article>
+    <article class="vcard reveal">
+      <div class="vcard-idx">02</div>
+      <h3>Physical action should be a callable primitive.</h3>
+      <p>As composable as a token transfer. As rentable as compute. Any agent, any wallet, pays for real-world motion the way it pays for an API call today.</p>
+    </article>
+    <article class="vcard reveal">
+      <div class="vcard-idx">03</div>
+      <h3>Safety belongs at the edge — not in the model.</h3>
+      <p>The agent may <em>ask</em>; the bridge <em>decides</em>. A whitelisted, state-gated, fail-closed runtime stands between intent and any actuator that can hurt someone.</p>
+    </article>
+    <article class="vcard reveal">
+      <div class="vcard-idx">04</div>
+      <h3>Whoever owns that bridge owns the on-ramp to embodied AI.</h3>
+      <p>Unitree is building it in the open — one proven loop at a time, starting with a humanoid that waves from a sentence you type to your assistant.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products">
+  <div class="section-head reveal">
+    <span class="eyebrow">What we're building</span>
+    <h2>One platform. A growing family of embodied skills.</h2>
+    <p class="section-lead">The Unitree bridge is the safety runtime. Each product plugs a new kind of intent, payment, or hardware into the same fail-closed bridge.</p>
+  </div>
+
+  <div class="prod-grid">
+    <article class="pcard reveal">
+      <span class="badge badge-live"><span class="dot"></span> Live · shipped</span>
+      <h3>Unitree Skill</h3>
+      <p>Type a sentence to Bankr → a real Unitree humanoid moves. The first end-to-end proof that an assistant's language can become safe physical motion. Runs in MuJoCo sim today, on live hardware next.</p>
+      <span class="pcard-tags">natural language · fail-closed · MuJoCo + hardware</span>
+      <a class="pcard-link" href="https://github.com/richard7463/unitree-skill" target="_blank" rel="noopener">View the skill ↗</a>
+    </article>
+
+    <article class="pcard reveal">
+      <span class="badge badge-core">Core</span>
+      <h3>Unitree Bridge</h3>
+      <p>The safety runtime every skill sits on: action whitelist, FSM &amp; battery gating, bearer auth, rate limits — fail-closed. The agent asks; the bridge decides.</p>
+      <span class="pcard-tags">whitelist · state-gating · fail-closed</span>
+    </article>
+
+    <article class="pcard reveal">
+      <span class="badge badge-next">Next</span>
+      <h3>Action Market (x402)</h3>
+      <p>Wrap any action behind x402 so <em>any</em> agent can pay <strong>USDC per action</strong> and get physical work back. The robot becomes a metered, permissionless actuator any wallet can rent.</p>
+      <span class="pcard-tags">USDC per action · permissionless</span>
+    </article>
+
+    <article class="pcard reveal">
+      <span class="badge badge-next">Next</span>
+      <h3>On-chain Triggers</h3>
+      <p>The bridge subscribes to chain events — tip received, mint, gas threshold — and fires an action with <strong>no human and no prompt in the loop.</strong> The thing a pure software skill structurally can't do.</p>
+      <span class="pcard-tags">event-driven · autonomous</span>
+    </article>
+
+    <article class="pcard reveal">
+      <span class="badge badge-horizon">Horizon</span>
+      <h3>More bodies</h3>
+      <p>Arms, quadrupeds, mobile bases — every new machine speaks the same whitelisted vocabulary, so safety scales with capability instead of fighting it.</p>
+      <span class="pcard-tags">multi-hardware · one contract</span>
+    </article>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="section-head reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>You type it. The bridge keeps it safe. The robot moves.</h2>
+  </div>
+  <div class="flow">
+    <div class="flow-step reveal">
+      <div class="flow-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 5v9a3 3 0 003 3h4l3 3v-3h3a0 0 0 000 0V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h4>You say it</h4><p>Plain English to Bankr, or an on-chain event.</p>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="flow-step reveal">
+      <div class="flow-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <h4>AI maps it</h4><p>Your assistant picks exactly one whitelisted action.</p>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="flow-step flow-hl reveal">
+      <div class="flow-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h4>Unitree Bridge</h4><p>Auth, whitelist, state &amp; battery gating. Refuses anything unsafe.</p>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="flow-step reveal">
+      <div class="flow-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="6" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5M8 13h8l1 8H7l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <h4>It moves</h4><p>A real humanoid moves — on rails, on-chain, fail-closed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety" class="safety">
+  <div class="section-head reveal">
+    <span class="eyebrow">Non-negotiable</span>
+    <h2>Fail-closed is the whole product.</h2>
+    <p class="section-lead">A robot that walks from the wrong state falls over. So the bridge — not the AI — holds every safety-critical decision.</p>
+  </div>
+  <div class="safety-grid">
+    <div class="scard reveal"><b>Whitelist only</b><span>Only named actions can ever run. No improvisation reaches hardware.</span></div>
+    <div class="scard reveal"><b>State gating</b><span>Motion refused unless the robot is in a safe, balanced state.</span></div>
+    <div class="scard reveal"><b>Battery gating</b><span>Walking &amp; turning refused below a safe charge.</span></div>
+    <div class="scard reveal"><b>Explicit confirm</b><span>Dangerous actions require a deliberate second yes.</span></div>
+    <div class="scard reveal"><b>Rate limited</b><span>Commands are throttled to protect the hardware.</span></div>
+    <div class="scard reveal"><b>No token, no motion</b><span>Missing auth ⇒ every request rejected. Closed by default.</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+  <h2>The endgame isn't "an agent that can wave."</h2>
+  <p>It's a world where physical action is just another callable primitive — as composable as a transfer, as rentable as compute, and only ever <strong>safe</strong>. We start with one sentence, one wave, one real robot.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="https://github.com/richard7463/unitree-skill" target="_blank" rel="noopener">Explore the Unitree Skill ↗</a>
+    <a class="btn btn-ghost" href="#top">Back to top</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <span class="brand-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor" opacity=".45"/><rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor" opacity=".45"/><rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor"/></svg></span>
+    Unitree
+  </div>
+  <p>Talk to your robot with the AI you already use — from on-chain intent to real-world motion, fail-closed by design.</p>
+  <div class="footer-links">
+    <a href="https://github.com/richard7463/unitree-skill" target="_blank" rel="noopener">GitHub</a>
+    <a href="#how">How it works</a>
+    <a href="#vision">Vision</a>
+    <a href="#safety">Safety</a>
+  </div>
+  <small>© 2026 Unitree Skill · Built as an open agent-embodiment platform · MIT-licensed skills · Independent project, not affiliated with Unitree Robotics.</small>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { e.target.style.transitionDelay = (e.target.dataset.d || 0) + 'ms'; e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => io.observe(el));
+  // stagger siblings within grids
+  document.querySelectorAll('.says-grid,.vision-grid,.prod-grid,.safety-grid,.flow').forEach(g => {
+    [...g.children].forEach((c, i) => { if (c.classList.contains('reveal')) c.dataset.d = i * 70; });
+  });
+  // nav shadow on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 12), { passive: true });
+</script>
+
+</body>
+</html>
