@@ -1,0 +1,21 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+
+# --- SIM mode (optional) --------------------------------------------------
+# Only needed for G1_MODE=sim: the live window (/live, streams the G1 moving
+# in real time) and the mp4 renderer. Not needed for mock or real. On a slow
+# link use the mirror:
+#   pip install mujoco 'imageio[ffmpeg]' pillow numpy \
+#       -i https://pypi.tuna.tsinghua.edu.cn/simple
+# mujoco>=3.1        # physics/render engine
+# imageio-ffmpeg>=0.5  # mp4 encoding (g1_sim_mujoco)
+# pillow>=10.0       # fast JPEG encoding for the live MJPEG stream
+# numpy>=1.24
+
+# --- Hardware SDK (real mode) ---------------------------------------------
+# Only needed on the bridge host that is on the G1's LAN.
+# The bridge runs in MOCK mode without it, so it is intentionally NOT pinned
+# here. Install separately on the robot host:
+#   pip install unitree_sdk2py
+# or from source: https://github.com/unitreerobotics/unitree_sdk2_python

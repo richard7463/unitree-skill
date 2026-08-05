@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Sim render outputs (regenerated on demand; a sample lives in docs/)
+sim_out/
+
+# OS
+.DS_Store
