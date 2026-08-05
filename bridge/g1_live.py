@@ -58,15 +58,15 @@ if _MUJOCO_AVAILABLE:
 # work. First keyword that matches wins; order matters for overlaps.
 # ---------------------------------------------------------------------------
 _NL_RULES: list[tuple[tuple[str, ...], str]] = [
-    (("wave", "hello", "hi ", "hey", "挥手", "打招呼", "你好"), "wave"),
-    (("shake", "handshake", "握手"), "shake_hand"),
-    (("nod", "yes", "agree", "点头"), "nod"),
-    (("sit", "坐下", "坐"), "sit"),
-    (("stand up", "get up", "起立", "站起"), "stand_up"),
-    (("high", "tall", "踮", "站高"), "high_stand"),
-    (("low", "crouch", "蹲", "下蹲"), "low_stand"),
-    (("balance", "stand", "站好", "站立", "立正"), "balance_stand"),
-    (("damp", "relax", "rest", "放松"), "damp"),
+    (("wave", "hello", "hi ", "hey"), "wave"),
+    (("shake", "handshake"), "shake_hand"),
+    (("nod", "yes", "agree"), "nod"),
+    (("sit",), "sit"),
+    (("stand up", "get up"), "stand_up"),
+    (("high", "tall"), "high_stand"),
+    (("low", "crouch"), "low_stand"),
+    (("balance", "stand"), "balance_stand"),
+    (("damp", "relax", "rest"), "damp"),
 ]
 
 

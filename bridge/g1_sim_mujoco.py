@@ -98,8 +98,7 @@ class G1SimBackend:
         if not _MUJOCO_AVAILABLE:
             raise SimUnavailable(
                 "mujoco not importable. Install it in the bridge venv:\n"
-                "  pip install mujoco imageio 'imageio[ffmpeg]'\n"
-                "(on a slow link use -i https://pypi.tuna.tsinghua.edu.cn/simple)"
+                "  pip install mujoco imageio 'imageio[ffmpeg]'"
             )
         self.model_path = model_path or _DEFAULT_MODEL
         if not os.path.exists(self.model_path):

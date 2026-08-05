@@ -122,14 +122,13 @@ robot.
 
 This is the one you screen-record (it's what the clip above shows). Start the
 bridge, open `/live`, and you get a split window: **left = a text box + gesture
-buttons, right = the G1 moving in real time.** Type "wave hello" (or 挥手 /
-"sit down" / 握手), hit Send, and the robot on the right does it *now*. No file
+buttons, right = the G1 moving in real time.** Type "wave hello" (or
+"sit down" / "shake hands"), hit Send, and the robot on the right does it *now*. No file
 is produced — you just record the window.
 
 ```bash
-# one-time: install the sim extras (mirror shown for slow links)
-pip install mujoco 'imageio[ffmpeg]' pillow numpy \
-  -i https://pypi.tuna.tsinghua.edu.cn/simple
+# one-time: install the sim extras
+pip install mujoco 'imageio[ffmpeg]' pillow numpy
 
 # start the bridge, then open http://localhost:8080/live in a browser
 export BRIDGE_TOKEN=$(openssl rand -hex 24)
@@ -166,9 +165,8 @@ walking controller (`walk_forward`, `turn`) succeed the gate but report "no sim
 animation".
 
 ```bash
-# one-time: install the sim extras (mirror shown for slow links)
-pip install mujoco imageio 'imageio[ffmpeg]' numpy \
-  -i https://pypi.tuna.tsinghua.edu.cn/simple
+# one-time: install the sim extras
+pip install mujoco imageio 'imageio[ffmpeg]' numpy
 
 # render a single gesture straight to mp4
 G1_MODE=sim python -m bridge.g1_sim_mujoco wave
