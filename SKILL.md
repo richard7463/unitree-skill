@@ -2,20 +2,20 @@
 name: unitree-g1
 version: 0.1.0
 description: >-
-  Talk to your Unitree G1 humanoid on the timeline. Send natural-language
+  Talk to your Unitree humanoid on the timeline. Send natural-language
   commands ("wave hello", "shake hands", "sit down") and the agent translates
   them into safe, whitelisted actions on a real robot via your bridge.
 homepage: https://github.com/richard7463/unitree-g1-skill
 license: MIT
 metadata:
   category: robotics
-  hardware: Unitree G1 humanoid
+  hardware: Unitree humanoid
   transport: HTTP bridge (LAN + tunnel)
 # The agent needs exactly two things from the user, mirroring the Tesla skill's
 # "paste your key" flow:
 inputs:
   - name: BRIDGE_URL
-    description: Public URL of your G1 bridge (from cloudflared/ngrok), e.g. https://xxx.trycloudflare.com
+    description: Public URL of your Unitree bridge (from cloudflared/ngrok), e.g. https://xxx.trycloudflare.com
     required: true
   - name: BRIDGE_TOKEN
     description: The bearer token you set on the bridge (BRIDGE_TOKEN env var).
@@ -23,9 +23,9 @@ inputs:
     secret: true
 ---
 
-# Unitree G1 Humanoid Skill
+# Unitree Humanoid Skill
 
-You control a **real Unitree G1 humanoid robot** through a small bridge server
+You control a **real Unitree humanoid robot** through a small bridge server
 the user runs on the robot's local network. You do **not** talk to the robot
 directly — you only ever call the bridge's HTTP API. The bridge owns all
 safety: it will reject unsafe actions, so trust its responses.
@@ -48,7 +48,7 @@ Every request includes the header: `Authorization: Bearer <BRIDGE_TOKEN>`.
    movement, first issue `balance_stand`, then the action.
 3. **Send** `POST /command` with `{"action": "<name>"}`.
 4. **Report** results in the same crisp style as the Tesla skill, e.g.:
-   > done on your G1: waved hello 👋 — robot was balance-standing, battery 87%.
+   > done on your Unitree: waved hello 👋 — robot was balance-standing, battery 87%.
 5. If the bridge returns HTTP **422**, it *refused* the action for safety.
    Read `message`, explain plainly, and suggest the fix (e.g. "battery too low",
    "robot is sitting — say 'stand up' first"). Never retry a refused action
@@ -92,7 +92,7 @@ Refused (422): `{ ok: false, action, message, state }`
 **User:** wave hello to everyone
 → `GET /state` → ready
 → `POST /command {"action":"wave"}`
-→ "done on your G1: waved hello 👋 (battery 86%)."
+→ "done on your Unitree: waved hello 👋 (battery 86%)."
 
 **User:** come here
 → `GET /state` → fsm `sit`, not ready
