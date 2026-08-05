@@ -222,12 +222,45 @@ Now on the timeline: **"@yourbot wave hello on my Unitree"** → the robot waves
 - **Rate limit**: motion commands are throttled to protect the hardware.
 - **Fail closed**: no `BRIDGE_TOKEN` set ⇒ every request is rejected.
 
-## Roadmap (next, once the loop is proven)
+## Roadmap
 
-- **x402 paid endpoint**: wrap `/command` so other agents pay USDC per action.
-- **On-chain triggers**: bridge subscribes to chain events (tip received / mint
-  / gas threshold) and fires an action — the thing a pure MCP skill can't do.
-- More expressive actions (dances / gestures) as the Unitree firmware exposes them.
+The loop today — *timeline sentence → bridge → real motion* — is the hard part,
+and it works. Everything below turns that single proven loop into an economy.
+
+**Now — the loop is live.** Natural language on the timeline drives a real
+humanoid, fail-closed, with sim + hardware backends. This is the foundation
+everything else stands on.
+
+**Next — make actions payable.**
+- **x402 paid endpoint.** Wrap `/command` behind x402 so *any* agent can pay
+  **USDC per action** and get physical work back. The robot stops being "my
+  demo" and becomes a metered, permissionless actuator any wallet can rent.
+
+**Then — make actions autonomous.**
+- **On-chain triggers.** The bridge subscribes to chain events (tip received /
+  mint / gas threshold) and fires an action with **no human and no prompt in the
+  loop** — a robot that reacts to money moving on-chain. This is the thing a pure
+  MCP skill structurally *cannot* do: it has no persistent process watching the
+  chain, and no hardware to move.
+
+**Always — deepen the vocabulary.**
+- **Richer motion.** More expressive actions — dances, gestures, sequenced
+  routines — as the Unitree firmware exposes them, each one added to the same
+  whitelist so safety scales with capability.
+
+## Vision
+
+Agents already move money, mint, and post. The one thing they've never had is a
+**body.** This skill is the smallest honest bridge across that gap: on-chain
+intent on one side, a real humanoid moving on the other, with the safety-critical
+decisions held at the edge where they belong — not in the model.
+
+The endgame isn't "an agent that can wave." It's a world where **physical action
+is just another callable primitive** — as composable as a token transfer, as
+rentable as compute. Any agent, any wallet, pays for real-world motion the way it
+pays for an API call today; the bridge guarantees it can only ever be *safe*
+motion. Start with one arm waving on a timeline. End with autonomous agents that
+can reach into the physical world — on rails, on-chain, and fail-closed by design.
 
 ---
 
